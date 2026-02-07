@@ -40,7 +40,7 @@ export class RecipesService {
         }).exec();
     }
 
-    async seedRecipes(recipes: Partial<Recipe>[]): Promise<RecipeDocument[]> {
+    async seedRecipes(recipes: Partial<Recipe>[]): Promise<any[]> {
         // Clear existing recipes first
         await this.recipeModel.deleteMany({});
         // Insert new recipes
