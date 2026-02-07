@@ -1,1 +1,56 @@
 @import "tailwindcss";
+
+@font-face{
+  font-family: "LINE Seed Sans TH";
+  src: url("/src/assets/fonts/LINESeedSansTH_W_Th.woff2") format("woff2");
+  font-weight: 100; /* Thin */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "LINE Seed Sans TH";
+  src: url("/src/assets/fonts/LINESeedSansTH_W_Rg.woff2") format("woff2");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "LINE Seed Sans TH";
+  src: url("/src/assets/fonts/LINESeedSansTH_W_Bd.woff2") format("woff2");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "LINE Seed Sans TH";
+  src: url("/src/assets/fonts/LINESeedSansTH_W_XBd.woff2") format("woff2");
+  font-weight: 800; /* ExtraBold */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "LINE Seed Sans TH";
+  src: url("/src/assets/fonts/LINESeedSansTH_W_He.woff2") format("woff2");
+  font-weight: 900; /* Heavy */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "Instrument Serif";
+  src: url("/font/InstrumentSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "Instrument Serif";
+  src: url("/font/InstrumentSerif-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme {
+  --font-line: "LINE Seed Sans TH", system-ui, sans-serif;
+  --font-instrument: "Instrument Serif", Times New Roman, serif;
+}

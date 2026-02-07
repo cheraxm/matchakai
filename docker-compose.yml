@@ -1,0 +1,54 @@
+services:
+  # Vite Frontend
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: matchakai-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://api:3000
+    depends_on:
+      - api
+    networks:
+      - matchakai-network
+
+  # NestJS Backend API
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: matchakai-api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongodb:27017/matchakai
+      - PORT=3000
+    depends_on:
+      - mongodb
+    networks:
+      - matchakai-network
+
+  # MongoDB Database
+  mongodb:
+    image: mongo:7.0
+    container_name: matchakai-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - matchakai-network
+
+networks:
+  matchakai-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local

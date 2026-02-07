@@ -1,130 +1,74 @@
-import Navbar from "../components/Navbar";
-// import { Carousel, Typography, Button } from "@material-tailwind/react";
-// import React from "react";
+import { CarouselBox } from "../components/Carousel";
+import FeaturedRecipes from "../components/FeaturedRecipes";
 
 function Home() {
   return (
     <div>
-      <section className='h-screen bg-cover bg-[url("assets/matchabg.png")] pt-14 pr-34 pl-34'>
-        <div className="flex flex-col gap-35">
-          <Navbar />
-          <div className="flex flex-col justify-center gap-5 items-center">
-            <h1 className='text-[96px] font-["Instrument_Serif"] text-[#fff]'>
-              MatchaKai
-            </h1>
-            <div className="bg-[#7F746C] opacity-80 rounded-2xl w-[602px] h-[238px] flex justify-center items-center pt-7 pb-7 pr-3 pl-3">
-              <p className='text-[20px] font-["Prompt"] text-[#fff] whitespace-pre-line text-center'>
-                {
-                  '"บ้านของคนรักมัทฉะ" ไม่ใช่แค่สถานที่ แต่คือความรู้สึก\nที่นี่คือที่ที่เรามารวมตัวกันด้วยความชอบเดียวกัน ทุกแก้วที่ชง\nทุกสูตรที่สร้างสรรค์ และทุกคำถามที่ต้องการคำตอบ ล้วนมีความหมาย\nบ้านของคนรักมัทฉะ จึงเป็นทั้งแหล่งความรู้ เป็นทั้งห้องครัว\nและเป็นทั้งห้องนั่งเล่นที่เราได้พักผ่อนและแบ่งปันเรื่องราวดีๆ ร่วมกัน'
-                }
-              </p>
-            </div>
+      <section className='bg-cover bg-center bg-[url("assets/matchabg.png")] px-8 pt-32 pb-36'>
+        <div className="flex flex-col justify-center items-center text-center gap-6 mt-16 md:mt-24">
+          <h1 className="text-7xl lg:text-8xl font-instrument text-[#FBF3E9] [text-shadow:0_2px_5px_rgba(0,0,0,0.8)]">
+            MatchaKai
+          </h1>
+          <div className="bg-[#A9896C]/70 backdrop-blur-sm rounded-2xl w-full max-w-2xl p-6">
+            <p className="text-lg lg:text-xl font-line text-white whitespace-pre-line">
+              {
+                '"บ้านของคนรักมัทฉะ" ไม่ใช่แค่สถานที่ แต่คือความรู้สึก\nที่นี่คือที่ที่เรามารวมตัวกันด้วยความชอบเดียวกัน ทุกแก้วที่ชง\nทุกสูตรที่สร้างสรรค์ และทุกคำถามที่ต้องการคำตอบ ล้วนมีความหมาย\nบ้านของคนรักมัทฉะ จึงเป็นทั้งแหล่งความรู้ เป็นทั้งห้องครัว\nและเป็นทั้งห้องนั่งเล่นที่เราได้พักผ่อนและแบ่งปันเรื่องราวดีๆ ร่วมกัน'
+              }
+            </p>
           </div>
         </div>
       </section>
-      <section className="bg-[#FFF4E7] h-[675px] pt-[100px] pb-[100px]">
-        <h1 className='text-4xl font-["Instrument_Serif"] text-black'>
+
+      <section className="bg-[#FFF4E7] py-24 px-4 flex flex-col items-center gap-10 justify-center">
+        <h1 className="text-5xl font-instrument text-black text-center">
           Our Journal Spotlight: This Week
         </h1>
-        <div>
-          {/* <Carousel className="rounded-xl">
-            <div className="relative h-full w-full">
-              <img
-                src="./assets/chasen.png"
-                alt="image 1"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
-                <div className="w-3/4 text-center md:w-2/4">
-                  <Typography
-                    variant="h1"
-                    color="white"
-                    className="mb-4 text-3xl md:text-4xl lg:text-5xl"
-                  >
-                    แปรงชงมัทฉะ (Chasen) สำคัญแค่ไหน? ทำไมถึงทำให้มัทฉะอร่อยขึ้น
-                  </Typography>
-                  <Typography
-                    variant="lead"
-                    color="white"
-                    className="mb-12 opacity-80"
-                  >
-                    คุณเคยจิบมัทฉะสักถ้วยแล้วรู้สึกถึงความเนียนนุ่ม พร้อมชั้นฟองครีมละเอียดที่ลอยอยู่ด้านบนหรือไม่?
-                  </Typography>
-                  <div className="flex justify-center gap-2">
-                    <Button size="lg" color="white">
-                      อ่านเพิ่ม
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative h-full w-full">
-              <img
-                src="./assets/matchalatta.jpg"
-                alt="image 2"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 grid h-full w-full items-center bg-black/75">
-                <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
-                  <Typography
-                    variant="h1"
-                    color="white"
-                    className="mb-4 text-3xl md:text-4xl lg:text-5xl"
-                  >
-                    มัทฉะโทนถั่ว คืออะไร? ต่างจากโทนหวาน โทนหญ้าอย่างไร?
-                  </Typography>
-                  <Typography
-                    variant="lead"
-                    color="white"
-                    className="mb-12 opacity-80"
-                  >
-                   ถ้าคุณชอบมัทฉะแต่ยังสับสนเรื่อง “โทนรส” บทความนี้จะช่วยให้ทุกอย่างชัดขึ้นในแก้วเดียว เราจะพาไปรู้จัก
-                  </Typography>
-                  <div className="flex gap-2">
-                    <Button size="lg" color="white">
-                      Explore
-                    </Button>
-                    <Button size="lg" color="white" variant="text">
-                      Gallery
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative h-full w-full">
-              <img
-                src="./assets/ichibancha.jpg"
-                alt="image 3"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 grid h-full w-full items-end bg-black/75">
-                <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
-                  <Typography
-                    variant="h1"
-                    color="white"
-                    className="mb-4 text-3xl md:text-4xl lg:text-5xl"
-                  >
-                    Ichibancha คืออะไร? “First Flush” ที่คนรักมัทฉะต้องรู้!
-                  </Typography>
-                  <Typography
-                    variant="lead"
-                    color="white"
-                    className="mb-12 opacity-80"
-                  >
-                   เคยสงสัยไหม? ชาเขียวญี่ปุ่นที่เต็มไปด้วยความหลากหลายและชื่อเรียกมากมาย และอาจจะสงสัยว่า “Ichibancha คือ?”
-                  </Typography>
-                  <div className="flex gap-2">
-                    <Button size="lg" color="white">
-                      Explore
-                    </Button>
-                    <Button size="lg" color="white" variant="text">
-                      Gallery
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Carousel> */}
+        <div className="w-full max-w-4xl">
+          <CarouselBox />
+        </div>
+      </section>
+
+      <section className="bg-[#B5C196] w-full py-24 flex flex-col justify-center items-center gap-10">
+        <h1 className="text-5xl font-instrument text-black text-center">
+          Must-Try Matcha Recipes
+        </h1>
+        <FeaturedRecipes />
+      </section>
+
+      <section className='w-full bg-cover bg-center bg-[url("assets/Frame46.png")] py-36 px-4 sm:px-8'>
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="text-white">
+            <h1 className="text-5xl font-instrument text-left pb-6">
+              Join the Conversation
+            </h1>
+            <p className="text-2xl font-line text-left">
+              มาร่วมวงสนทนาได้เลย!
+              <br />
+              เราได้รวบรวมคำถามที่น่าสนใจประจำสัปดาห์นี้
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-8 mt-30">
+            {[
+              {
+                id: 1,
+                text: "ทำไมชงมัทฉะเองที่บ้านแล้วถึงขม ไม่หอมเหมือนที่คาเฟ่เลยคะ?",
+              },
+              { id: 2, text: "นมโอ๊ตยี่ห้อไหนเข้ากับมัทฉะที่สุดในตอนนี้?" },
+              {
+                id: 3,
+                text: "ขอพิกัด Chasen (แปรงชงชา) คุณภาพดีสำหรับผู้เริ่มต้น",
+              },
+            ].map((question) => (
+              <a
+                key={question.id}
+                href="#"
+                className="relative text-white/80 font-line text-xl hover:text-white after:content-[''] after:absolute after:left-0 after:bottom-0 transition-colors after:h-px after:bg-black/70 after:w-11/12"
+              >
+                {question.text}
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </div>
